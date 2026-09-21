@@ -16,3 +16,5 @@ dependencyResolutionManagement {
 rootProject.name = "jit-mod"
 
 include(":probe")
+
+include(":chat-cli")
