@@ -107,7 +107,7 @@ class ChatCliInstanceV1 internal constructor(
             if (record.operationType != ChatCliModuleV1.MESSAGE_OPERATION) continue
             val message = try {
                 record.payload.bytes.decodeToString(throwOnInvalidSequence = true)
-            } catch (_: CharacterCodingException) {
+            } catch (_: Exception) {
                 return failed("chat-message-invalid-utf8")
             }
             lines += record.event.value + "\t" + message
